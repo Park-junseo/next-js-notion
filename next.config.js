@@ -6,12 +6,7 @@ const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === 'true'
 })
 
-const nextConfig = {
-  output: 'export',
-  basePath: '/Park-junseo.github.io',
-}
-
-export default withBundleAnalyzer({
+const analyzer = withBundleAnalyzer({
   staticPageGenerationTimeout: 300,
   images: {
     remotePatterns: [
@@ -44,3 +39,8 @@ export default withBundleAnalyzer({
   // See https://react-tweet.vercel.app/next#troubleshooting
   transpilePackages: ['react-tweet']
 })
+
+analyzer.output = 'export';
+analyzer.basePath = '/Park-junseo.github.io';
+
+export default analyzer
