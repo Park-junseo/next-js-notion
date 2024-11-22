@@ -219,3 +219,6 @@ function invertPageUrlOverrides(
     }
   }, {})
 }
+
+const repository = "portfolio";
+export const prefix = process.env.NODE_ENV === "production" ? `https://Park-junseo.github.io/${repository}` : "";
