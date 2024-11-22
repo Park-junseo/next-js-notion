@@ -41,4 +41,10 @@ const analyzer = withBundleAnalyzer({
   transpilePackages: ['react-tweet']
 })
 
+const debug = process.env.NODE_ENV !== "production";
+const repository = "portfolio";
+
+analyzer.assetPrefix = !debug ? `/${repository}/` : "";
+analyzer.trailingSlash = true;
+
 export default analyzer
