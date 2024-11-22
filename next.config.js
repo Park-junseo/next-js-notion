@@ -44,6 +44,8 @@ const analyzer = withBundleAnalyzer({
 const debug = process.env.NODE_ENV !== "production";
 const repository = "portfolio";
 
+analyzer.output = 'export';
+analyzer.basePath = `/${repository}`;
 analyzer.assetPrefix = !debug ? `/${repository}/` : "";
 analyzer.trailingSlash = true;
 
