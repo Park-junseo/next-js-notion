@@ -10,7 +10,7 @@ export default siteConfig({
 
   // basic site info (required)
   name: 'Park-Junseo\'s Portfolio',
-  domain: 'park-junseo.vercel.app',
+  domain: 'park-junseo.github.io/portfolio',
   author: 'Junseo Park',
 
   // open graph metadata (optional)
