@@ -1,10 +1,8 @@
 {
-  "name": "nextjs-notion-starter-kit",
+  "name": "portfolio",
   "version": "2.0.0",
   "private": true,
   "description": "The perfect starter kit for building beautiful websites with Next.js and Notion.",
-  "author": "Travis Fischer <travis@transitivebullsh.it>",
-  "repository": "transitive-bullshit/nextjs-notion-starter-kit",
   "license": "MIT",
   "engines": {
     "node": ">=18"
@@ -13,9 +11,9 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "next build & next export",
+    "build": "next build",
     "start": "next start",
-    "deploy": "touch out/.nojekyll && gh-pages -d out -b deploy -t true",
+    "deploy": "shx rm -rf node_modules/.cache && next build && next export && shx type nul > out/.nojekyll && git add out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages",
     "deps:upgrade": "[ -z $GITHUB_ACTIONS ] && pnpm up -L notion-client notion-types notion-utils react-notion-x || echo 'Skipping deps:update on CI'",
     "deps:link": "[ -z $GITHUB_ACTIONS ] && run-s deps:link:* || echo 'Skipping deps:update on CI'",
     "deps:unlink": "[ -z $GITHUB_ACTIONS ] && pnpm add notion-client notion-types notion-utils react-notion-x || echo 'Skipping deps:update on CI'",
@@ -68,6 +66,7 @@
     "gh-pages": "^6.2.0",
     "npm-run-all2": "^7.0.1",
     "prettier": "^3.3.3",
+    "shx": "^0.3.4",
     "typescript": "^5.6.3"
   },
   "overrides": {
