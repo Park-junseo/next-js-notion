@@ -13,10 +13,9 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next start",
-    "predeploy": "npm run build",
-    "deploy": "touch out/.nojekyll && gh-pages -d out --dotfiles",
+    "deploy": "touch out/.nojekyll && gh-pages -d out -b deploy -t true",
     "deps:upgrade": "[ -z $GITHUB_ACTIONS ] && pnpm up -L notion-client notion-types notion-utils react-notion-x || echo 'Skipping deps:update on CI'",
     "deps:link": "[ -z $GITHUB_ACTIONS ] && run-s deps:link:* || echo 'Skipping deps:update on CI'",
     "deps:unlink": "[ -z $GITHUB_ACTIONS ] && pnpm add notion-client notion-types notion-utils react-notion-x || echo 'Skipping deps:update on CI'",

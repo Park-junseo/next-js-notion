@@ -47,6 +47,7 @@ const repository = "portfolio";
 if(!debug) {
   analyzer.output = 'export';
   analyzer.basePath = `/${repository}`;
+  analyzer.images.unoptimized = true;
 } 
 analyzer.assetPrefix = !debug ? `https://park-junseo.github.io/${repository}` : "";
 analyzer.trailingSlash = true;
