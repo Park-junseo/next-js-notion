@@ -10,8 +10,8 @@ jobs:
       fail-fast: true
       matrix:
         node-version:
-          - 18
           - 22
+          - 18
 
     steps:
       - name: Checkout
