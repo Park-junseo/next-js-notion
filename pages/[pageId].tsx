@@ -14,7 +14,11 @@ export const getStaticProps: GetStaticProps<PageProps, Params> = async (
   try {
     const props = await resolveNotionPage(domain, rawPageId)
 
-    return { props, revalidate: 10 }
+    console.log("\n===props====")
+    
+    console.log(props);
+    console.log("===props====")
+    return { props, revalidate: 100 }
   } catch (err) {
     console.error('page error', domain, rawPageId, err)
 
@@ -35,18 +39,18 @@ export async function getStaticPaths() {
   const siteMap = await getSiteMap()
 
   const staticPaths = {
-    paths: Object.keys(siteMap.canonicalPageMap)
-    .filter((pageId)=>pageId !== "146f8efc415680c49154c2d90619ad68")
-    .map((pageId) => ({
+    paths: Object.keys(siteMap.canonicalPageMap).map(pageId => ({
       params: {
-        pageId
-      }
+        pageId,
+      },
     })),
     // paths: [],
-    fallback: true
+    fallback: false
   }
 
+  console.log("\n===path====")
   console.log(staticPaths.paths)
+  console.log("===path====")
   return staticPaths
 }
 
