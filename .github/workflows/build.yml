@@ -10,8 +10,8 @@ jobs:
       fail-fast: true
       matrix:
         node-version:
-          - 22
           - 18
+          - 22
 
     steps:
       - name: Checkout
@@ -29,7 +29,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
-          cache-dependency-path: '**/pnpm-lock.json'
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile --strict-peer-dependencies
