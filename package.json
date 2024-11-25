@@ -57,7 +57,7 @@
   },
   "devDependencies": {
     "@fisch0920/eslint-config": "^1.4.0",
-    "@next/bundle-analyzer": "^12.1.0",
+    "@next/bundle-analyzer": "^15.0.2",
     "@types/jquery": "^3.5.32",
     "@types/node": "^22.8.6",
     "@types/react": "^18.0.21",
