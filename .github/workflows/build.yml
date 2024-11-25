@@ -29,7 +29,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
-          cache-dependency-path: ./package-lock.json
+          cache-dependency-path: '**/pnpm-lock.json'
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile --strict-peer-dependencies
