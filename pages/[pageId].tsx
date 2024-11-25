@@ -35,7 +35,9 @@ export async function getStaticPaths() {
   const siteMap = await getSiteMap()
 
   const staticPaths = {
-    paths: Object.keys(siteMap.canonicalPageMap).map((pageId) => ({
+    paths: Object.keys(siteMap.canonicalPageMap)
+    .filter((pageId)=>pageId !== "146f8efc415680c49154c2d90619ad68")
+    .map((pageId) => ({
       params: {
         pageId
       }

@@ -44,9 +44,11 @@ const analyzer = withBundleAnalyzer({
 const debug = process.env.NODE_ENV !== "production";
 const repository = "portfolio";
 
-analyzer.output = 'export';
-analyzer.basePath = `/${repository}`;
-analyzer.assetPrefix = !debug ? `/${repository}/` : "";
+if(!debug) {
+  analyzer.output = 'export';
+  analyzer.basePath = `/${repository}`;
+} 
+analyzer.assetPrefix = !debug ? `https://park-junseo.github.io/${repository}` : "";
 analyzer.trailingSlash = true;
 
 export default analyzer
